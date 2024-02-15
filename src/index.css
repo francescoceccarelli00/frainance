@@ -13,6 +13,10 @@ p{
 }
 
 #marked{
+  text-decoration: 2px solid underline #F3BA2F;
+  text-underline-offset: 4px;
+  padding: 6px;
+  color: black;
   transition: .5s;
 }
 
@@ -20,4 +24,18 @@ p{
   background-color: #F3BA2F;
   border-radius: 8px;
   transition-duration: .3s;
+}
+
+.info-data p a{
+  text-decoration: 2px solid underline #F3BA2F;
+  text-underline-offset: 4px;
+  padding: 6px;
+  color: black;
+  transition: .5s;
+}
+
+.info-data p a:hover{
+  transition-duration: .3s;
+  color :#F3BA2F;
+  text-underline-offset: 2px;
 }
