@@ -1,0 +1,17 @@
+.navBar{
+    background-color: #F3BA2F !important;
+    border-bottom:1px solid #181A20;
+}
+
+.navItem a{
+    color: #181A20;
+    font-family:'Inter', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    transition-duration: 1s;
+}
+
+.navItem a:hover{
+    color: #8D6D06 !important;
+    transition-duration: 0.5s;
+}

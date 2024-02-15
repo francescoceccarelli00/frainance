@@ -1,0 +1,36 @@
+footer{
+    background-color: #181A20;
+}
+
+h3{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #F3BA2F !important;
+}
+
+.course > a{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 300 !important;
+    text-decoration: none !important;
+    color: #F3BA2F !important;
+    transition-duration: 0.5s;
+}
+
+.course > a:hover{
+    color: #8D6D06 !important;
+    transition-duration: 0.5s;
+}
+
+.copyright{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos{
+    max-width: 90px;
+    align-self: center;
+    margin: 0 10px;
+}
+
