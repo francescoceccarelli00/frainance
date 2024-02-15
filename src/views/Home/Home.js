@@ -1,59 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import style from './Home.module.css';
-import clsx from 'clsx';
-import CoinsTable from '../../components/CoinsRow/CoinsTable';
-import CoinsGrid from '../../components/CoinsCards/CoinsGrid';
-import axios from 'axios';
-// import { CryptoCoins } from '../../assets/API/API';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import Carousel from '../../components/Carousel/Carousel'
+
 
 function Home() {
-
-    const [displayTable, setDisplayTable] = useState("true");
-
-    const [crypto,setCrypto] = useState([]);
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d&locale=en&precision=2&x_cg_demo_api_key=CG-KAoatvTcTEQBtENPveM3Nhhd';
-
-    useEffect(() => {
-        axios.get(url)
-        .then((resp) => resp.data)
-        .then(data => {
-            setCrypto(data);
-            // console.log(data[0])
-        })
-        .catch((error) => {
-            console.log(error) 
-        })
-    }, [])
 
   return (
 
     <div className='container'>
-        
-        <div className='row justify-content-center align-items-center my-3'>
-            <div className='col-9'>
-                <h1>Top 100</h1>
-            </div>
-            <div className='col-3 d-flex justify-content-center'>
-                <div className={style.switch}>
-                    <div id={style.table} className={clsx(style.option, {[style.active]: displayTable})}
-                        onClick={() => setDisplayTable(true)}>
-                        Table
-                    </div>
-                    <div id={style.grid} className={clsx(style.option, {[style.active]: !displayTable})}
-                        onClick={() => setDisplayTable(false)}>
-                        Grid
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className='row justify-content-center'>
+        <div className='row justify-content-center align-items-center my-5'>
             <div className='col'>
-                {displayTable ? <CoinsTable crypto={crypto}/> : <CoinsGrid crypto={crypto} />}
+            <br/>
+                <h1 style={{textAlign:'center'}}>Welcome to F<span style={{color:'#F3BA2F'}}>(<span style={{color:'#181A20'}}>ra</span>)</span>inance</h1><br/><br/>
+                <h2 style={{textAlign:'center'}}>A platform to keep track of your favorite cryptocurrencies</h2><br/>
+                <div className='px-4 py-3' style={{textAlign:'center'}}>
+                    <h4>Watch the 
+                        <span style={{textAlign:'center'}}>
+                            <NavLink id='marked' to={'/top100'}>
+                                Top 100
+                            </NavLink>
+                        </span>cryptocurrencies
+                    </h4>
+                </div><br/>
+                {<Carousel/>}    
+                <br/>
+                <p style={{fontWeight:'400', textAlign:'center'}}>This web application was created in React for the <a href='https://elearning.unimib.it/course/info.php?id=51512' id='marked'>Web Applications</a> course project.</p>
+                <p style={{fontWeight:'400', textAlign:'center'}}>The design, name, and logo are intentionally inspired by <a href='https://www.binance.com/it' id='marked'>Binance</a>, while the data used has been sourced from <a href='https://www.coingecko.com/' id='marked'>CoinGecko.</a></p>
+
             </div>
         </div>
-        <div className='row'>
-            
-        </div>
+        
+       
     </div>
   )
 }

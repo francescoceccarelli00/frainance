@@ -10,7 +10,7 @@ function App() {
 
   const nav =[
     {url:"/", text:"Home"},
-    {url:"/top100", text:"Top 100"},
+    {url:"/top100", text:"Top 100", exact: false},
     {url:"/favourite", text:"Favourite"}
   ];
 
@@ -24,9 +24,9 @@ function App() {
       >
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='favourite' element={<Favourite/>}/>
+          <Route path='/favourite' element={<Favourite/>}/>
           <Route path='/top100' element={<Top100/>}/>
-          <Route path=':cryptoid' element={<CryptoDetails/>}/>
+          <Route path='/top100/:cryptoId' element={<CryptoDetails/>}/>
         </Routes>
       </MainTemplate>
     </BrowserRouter>

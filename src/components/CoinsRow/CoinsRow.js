@@ -11,10 +11,10 @@ const CoinsRow =(props) => {
         </th>
 
         <td>
-            <NavLink to={props.crypto.id} style={{textDecoration:'none', color: 'black'}}>
-                <span className='px-3 pb-1' id='marked'>
+            <NavLink to={props.crypto.id} key={props.crypto.id} style={{textDecoration:'none', color: 'black'}}>
+                <span  id='marked' className='px-3 pt-0 pb-1'>
                 <img className='mx-1' src={props.crypto.image} alt={props.crypto.name} style={{maxWidth:24}}/>
-                    {props.crypto.symbol}
+                    {props.crypto.symbol.toUpperCase()}
                 </span>
                 
             </NavLink>
@@ -29,9 +29,6 @@ const CoinsRow =(props) => {
                 {props.crypto.price_change_percentage_24h > 0 ? <span>↑</span> : <span>↓</span>}
             </div> 
             {props.crypto.price_change_percentage_24h} %
-        </td>
-        <td>
-            Add to<img className='mx-1' src={logo} alt='' style={{maxWidth:24}}/>
         </td>
         <td>
             Add to<img className='mx-1' src={logo} alt='' style={{maxWidth:24}}/>

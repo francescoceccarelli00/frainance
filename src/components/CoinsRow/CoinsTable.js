@@ -27,9 +27,6 @@ function CoinsTable(props) {
                     <th>
                         Add to Favourite
                     </th>
-                    <th>
-                        Add to My Wallet
-                    </th>
                 </tr>
             </thead>
             <tbody>
