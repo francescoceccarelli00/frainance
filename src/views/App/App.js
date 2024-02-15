@@ -3,15 +3,15 @@ import MainTemplate from '../../components/MainTemplate/MainTemplate'
 import Home from '../Home/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Favourite from '../Favourite/Favourite'
-import MyWallet from '../MyWallet/MyWallet'
 import CryptoDetails from '../CryptoDetails/CryptoDetails'
+import Top100 from '../Top100/Top100'
 
 function App() {
 
   const nav =[
-    {url:"/top100", text:"Top100"},
-    {url:"/favourite", text:"Favourite"},
-    {url:"/mywallet", text:"MyWallet"}
+    {url:"/", text:"Home"},
+    {url:"/top100", text:"Top 100"},
+    {url:"/favourite", text:"Favourite"}
   ];
 
   return (
@@ -25,10 +25,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='favourite' element={<Favourite/>}/>
-          <Route path='/mywallet' element={<MyWallet/>}/>
-          <Route path='/top100' element={<CryptoDetails/>}>
-            <Route path=':coinId' element={<CryptoDetails/>}/>
-          </Route>
+          <Route path='/top100' element={<Top100/>}/>
+          <Route path=':cryptoid' element={<CryptoDetails/>}/>
         </Routes>
       </MainTemplate>
     </BrowserRouter>

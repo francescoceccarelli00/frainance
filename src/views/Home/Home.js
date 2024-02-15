@@ -4,15 +4,14 @@ import clsx from 'clsx';
 import CoinsTable from '../../components/CoinsRow/CoinsTable';
 import CoinsGrid from '../../components/CoinsCards/CoinsGrid';
 import axios from 'axios';
-import Carousel from '../../components/Carousel/Carousel';
-
+// import { CryptoCoins } from '../../assets/API/API';
 
 function Home() {
 
     const [displayTable, setDisplayTable] = useState("true");
 
     const [crypto,setCrypto] = useState([]);
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d&locale=en&precision=2&x_cg_demo_api_key=CG-KAoatvTcTEQBtENPveM3Nhhd';
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d&locale=en&precision=2&x_cg_demo_api_key=CG-KAoatvTcTEQBtENPveM3Nhhd';
 
     useEffect(() => {
         axios.get(url)
@@ -29,9 +28,7 @@ function Home() {
   return (
 
     <div className='container'>
-        <div className='row justify-content-center align-items-center my-3'>
-            {Carousel}
-        </div>
+        
         <div className='row justify-content-center align-items-center my-3'>
             <div className='col-9'>
                 <h1>Top 100</h1>
