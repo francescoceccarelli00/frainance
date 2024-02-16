@@ -1,3 +1,34 @@
 .normal{
     font-weight: 400;
 }
+#infodata p a{
+    text-decoration: 2px solid underline #F3BA2F;
+    text-underline-offset: 4px;
+    padding: 6px;
+    color: black;
+    transition: .5s;
+  }
+  
+#infodata p a:hover{
+    transition-duration: .3s;
+    color :#8D6D06;
+    text-decoration: 2px solid underline #8D6D06;
+    text-underline-offset: 2px;
+  }
+
+#bigCard{
+  border-radius: 52px ;
+  box-shadow: 0 10px 16px 8px #00000025;
+}
+
+#topPart{
+  background-color: #F3BA2F;
+  border-radius: 44px 44px 0 0;
+  height: 50px;
+}
+
+#bottomPart{
+  background-color: #F3F4F6;
+  border-radius:0 0 44px 44px;
+  height: 50px;
+}

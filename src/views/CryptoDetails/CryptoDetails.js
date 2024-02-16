@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import style from './CryptoDetails.module.css'
 import DOMPurify from 'dompurify';
@@ -9,18 +9,18 @@ function CryptoDetails() {
     const {cryptoId} = useParams();
 
     const [detail, setDetail]= useState({});
-    const url = "https://api.coingecko.com/api/v3/coins/ethereum";
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(`https://api.coingecko.com/api/v3/coins/${cryptoId}`)
         .then((resp) => resp.data)
         .then(data => {
             setDetail(data);
-            console.log(data[0])
+            // console.log(data[0])
         })
         .catch((error) => {
             console.log(error) 
         })
+        // eslint-disable-next-line
     }, [])
 
   return (
@@ -32,27 +32,41 @@ function CryptoDetails() {
             </div>
             <div className='col-3 d-flex justify-content-center'> Navigation?
                 {/* <div className={style.navigation}>
-                    <NavLink to={detail.market_cap_rank-1}>Prev</NavLink>
-                    <NavLink to={detail.market_cap_rank+1}>Next</NavLink>
+                    <NavLink to={detail.id-1}>Prev</NavLink>
+                    <NavLink to={detail.id+1}>Next</NavLink>
                 </div> */}
             </div>
         </div>
         <div className='row d-flex justify-content-evenly'>
-            <div className='col-10 col-lg-5 mb-5 info-text' style={{backgroundColor:'red', height:200}}>
-                
+            <div id={style.infotext} className='col-10 pb-5'>
+                <div className='container-flex'>
+                    <div className='row'>
+                        <div className='col-10 offset-1'>
+                            <div id={style.bigCard} className='p-2'>
+                                <div id={style.topPart} className=''>
+
+                                </div>
+                                <div id={style.bottomPart} className=''>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className='col-10 col-lg-5 info-data'>
-                <h2>About</h2>
+            <div id={style.infodata} className='col-10 py-3'>
+                <h2>About {detail.name}</h2>
                 <p className={style.normal} dangerouslySetInnerHTML={{
                     __html:DOMPurify.sanitize(detail.description ? detail.description.en : null)
                 }}></p>
                 <span style={{fontSize: '18px', fontWeight:'700'}}>
                     Read all about {cryptoId} protocol in the 
-                    {detail.links? <a id='marked' style={{fontSize: '18px'}} href={detail.links.whitepaper}>Whitepaper</a>: null}
+                    {detail.links? <a id='marked' style={{fontSize: '18px'}} href={detail.links.whitepaper}>Whitepaper</a>: <p>whitepaper</p>}
                 </span>
             </div>
         </div>
-        <div>CryptoDetails o {cryptoId}</div>
+        <br/><br/><br/><br/>
+        <div>CryptoDetails of {cryptoId}</div>
         <h1>{detail.id}</h1>
     </div>    
   )

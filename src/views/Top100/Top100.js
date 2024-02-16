@@ -29,7 +29,7 @@ function Top100() {
   return (
 
     <div className='container'>
-        <div className='row justify-content-center align-items-center my-3'>
+        <div className='row align-items-center my-3'>
             <div className='col-9'>
                 <h1>Top 100</h1>
             </div>
