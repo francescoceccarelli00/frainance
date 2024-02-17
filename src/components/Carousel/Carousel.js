@@ -41,7 +41,7 @@ const Carousel = () => {
                   <img
                       src={coin?.image}
                       alt={coin.name}
-                      height={60}
+                      height={100}
                   />
                   <p id='blackcolor' className='mt-2'>{coin.symbol.toUpperCase()}</p>
                   <p id='blackcolor' className=''>Current price</p>

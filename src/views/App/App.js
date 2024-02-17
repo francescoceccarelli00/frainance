@@ -2,7 +2,6 @@ import React from 'react'
 import MainTemplate from '../../components/MainTemplate/MainTemplate'
 import Home from '../Home/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Favourite from '../Favourite/Favourite'
 import CryptoDetails from '../CryptoDetails/CryptoDetails'
 import Top100 from '../Top100/Top100'
 
@@ -11,7 +10,7 @@ function App() {
   const nav =[
     {url:"/", text:"Home"},
     {url:"/top100", text:"Top 100", exact: false},
-    {url:"/favourite", text:"Favourite"}
+    // {url:"/favourite", text:"History"}
   ];
 
   return (
@@ -24,7 +23,6 @@ function App() {
       >
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/favourite' element={<Favourite/>}/>
           <Route path='/top100' element={<Top100/>}/>
           <Route path='/top100/:cryptoId' element={<CryptoDetails/>}/>
         </Routes>

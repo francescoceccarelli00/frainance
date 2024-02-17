@@ -1,7 +1,5 @@
 import React from 'react'
-import icon from '../../assets/images/logo.png'
 import { NavLink } from 'react-router-dom'
-import Buttons from '../Buttons/Buttons'
 
 const  CoinsCards = (props) => {
 
@@ -21,10 +19,8 @@ const  CoinsCards = (props) => {
       
     </div>
 
-    <div className='d-flex flex-column px-3 py-2'>
-      <div className='d-flex justify-content-between'>
-        <p style={{fontWeight:400}}>Price</p> <p>{props.crypto.current_price} $</p>
-      </div>
+    <div className='d-flex flex-column px-3 pt-3'>
+      
       <div className='d-flex justify-content-between'>
         <p style={{fontWeight:400}}>24h Chg%</p> <p className='p-1' style={{borderRadius:'8px', border:'1px solid #181A20', backgroundColor: props.crypto.price_change_percentage_24h > 0 ? 'lightgreen' : 'tomato'}}>{props.crypto.price_change_percentage_24h} %</p>
       </div>
@@ -33,9 +29,9 @@ const  CoinsCards = (props) => {
       </div>
     </div>
 
-    <div className='p-3 w-100 d-flex justify-content-evenly' style={{backgroundColor: '#D7D8E0', borderRadius: '0 0 26px 26px'}}>
+    <div className='pt-3 w-100 d-flex justify-content-evenly' style={{backgroundColor: '#D7D8E0', borderRadius: '0 0 26px 26px'}}>
       {/* prima c'era me-4 se metto entrambi i bottoni */}
-      {<Buttons/>}
+      {/* {<Buttons/>} */}
       {/* <div className=''>
         <a id='marked' className='pb-2' href='/'>
           <span className='me-2' style={{color:'#181A20'}}>Add to Favourite</span>
@@ -50,6 +46,9 @@ const  CoinsCards = (props) => {
           <img src={icon} alt='' style={{maxWidth:24}}/>
         </span>
       </div> */}
+      <div className='d-flex justify-content-between'>
+        <p style={{fontSize:'18px'}}>{props.crypto.current_price} $</p>
+      </div>
     </div>
   </div>
 

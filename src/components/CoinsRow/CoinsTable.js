@@ -21,11 +21,11 @@ function CoinsTable(props) {
                     <th>
                         Price
                     </th>
-                    <th className='d-none d-md-block'>
+                    <th>
                         24h chg%
                     </th>
-                    <th>
-                        Add to Favourite
+                    <th className='d-none d-md-block'>
+                        Market Cap
                     </th>
                 </tr>
             </thead>

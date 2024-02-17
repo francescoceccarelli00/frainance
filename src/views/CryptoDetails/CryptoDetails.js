@@ -170,8 +170,8 @@ function CryptoDetails() {
             </div>
         </div>
         <br/><br/><br/><br/>
-        <div>CryptoDetails of  {cryptoId} (nome pagina cryptoID)</div>
-        <h1>{detail.id} (nome da fetch detail.id)</h1>
+        {/* <div>CryptoDetails of  {cryptoId} (nome pagina cryptoID)</div>
+        <h1>{detail.id} (nome da fetch detail.id)</h1> */}
     </div>    
   )
 }

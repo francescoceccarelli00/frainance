@@ -8,6 +8,7 @@ import {
     NavItem
 } from 'reactstrap';
 import { NavLink as RouterLink } from 'react-router-dom';
+import Research from '../Research/Research';
 
 const Navbarre = (props) => {
 
@@ -75,6 +76,9 @@ const Navbarre = (props) => {
                 <NavbarToggler onClick={toggle}/>
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className='navbar-nav ms-auto gap-5' navbar>
+                            <NavItem>
+                                <Research/>
+                            </NavItem>
                             {itemList}
                         </Nav>
                     </Collapse>
