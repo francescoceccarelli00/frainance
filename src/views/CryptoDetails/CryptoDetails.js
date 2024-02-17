@@ -48,12 +48,12 @@ function CryptoDetails() {
                 <p className={style.normal}>Questa è la crypto numero #{detail.market_cap_rank} per capitale</p>
                 <h1><span>{detail.image ? <img className='mx-2' src={detail.image.small} alt=''/>: null}</span>{detail.name}</h1>
             </div>
-            <div className='col-10 col-sm-3 d-flex justify-content-center'> Navigation?
-                {/* <div className={style.navigation}>
+            {/* <div className='col-10 col-sm-3 d-flex justify-content-center'> Navigation?
+                <div className={style.navigation}>
                     <NavLink to={crypto.name}>{crypto.name}</NavLink>
                     <NavLink to={detail.id}>Next</NavLink>
-                </div> */}
-            </div>
+                </div>
+            </div> */}
         </div>
         <div className='row d-flex justify-content-evenly'>
             <div id={style.infotext} className='col-10 pb-5'>

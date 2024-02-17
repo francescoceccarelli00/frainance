@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import CoinsTable from '../../components/CoinsRow/CoinsTable';
 import CoinsGrid from '../../components/CoinsCards/CoinsGrid';
 import axios from 'axios';
-// import { CryptoCoins } from '../../assets/API/API';
 
 function Top100() {
 
@@ -46,13 +45,10 @@ function Top100() {
                 </div>
             </div>
         </div>
-        <div className='row justify-content-center'>
+        <div className='row justify-content-center mb-5'>
             <div className='col'>
                 {displayTable ? <CoinsTable crypto={crypto}/> : <CoinsGrid crypto={crypto} />}
             </div>
-        </div>
-        <div className='row'>
-            
         </div>
     </div>
   )
