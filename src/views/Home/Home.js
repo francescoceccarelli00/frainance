@@ -15,10 +15,10 @@ function Home() {
                 <h2 style={{textAlign:'center'}}>A platform to keep track of your favorite cryptocurrencies</h2><br/>
                 <div className='px-4 py-3' style={{textAlign:'center'}}>
                     <h4>Watch the 
-                        <span style={{textAlign:'center'}}>
-                            <NavLink id='marked' to={'/top100'}>
+                        <span style={{textAlign:'center'}}><hr/>
+                            <NavLink id='marked' style={{fontSize:'30px'}} to={'/top100'}>
                                 Top 100
-                            </NavLink>
+                            </NavLink><hr/>
                         </span>cryptocurrencies
                     </h4>
                 </div>
