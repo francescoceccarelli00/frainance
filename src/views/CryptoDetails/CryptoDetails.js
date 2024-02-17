@@ -26,11 +26,11 @@ function CryptoDetails() {
   return (
     <div className='container'>
         <div className='row justify-content-center align-items-center my-5'>
-            <div className='col-9'>
+            <div className='col-10 col-sm-9'>
                 <p className={style.normal}>Questa è la crypto numero #{detail.market_cap_rank} per capitale</p>
                 <h1><span>{detail.image ? <img className='mx-2' src={detail.image.small} alt=''/>: null}</span>{detail.name}</h1>
             </div>
-            <div className='col-3 d-flex justify-content-center'> Navigation?
+            <div className='col-10 col-sm-3 d-flex justify-content-center'> Navigation?
                 {/* <div className={style.navigation}>
                     <NavLink to={detail.id-1}>Prev</NavLink>
                     <NavLink to={detail.id+1}>Next</NavLink>
@@ -41,13 +41,99 @@ function CryptoDetails() {
             <div id={style.infotext} className='col-10 pb-5'>
                 <div className='container-flex'>
                     <div className='row'>
-                        <div className='col-10 offset-1'>
+                        <div className='col-12 col-md-10 offset-md-1'>
                             <div id={style.bigCard} className='p-2'>
-                                <div id={style.topPart} className=''>
-
+                                <div id={style.topPart} className='mb-3 py-2'>
+                                    {detail.market_data && detail.market_data.current_price? <h2 className='py-1 d-flex justify-content-center'>{detail.market_data.current_price.usd} $</h2> : null }    
                                 </div>
-                                <div id={style.bottomPart} className=''>
-
+                                <div id={style.centralPart} className='row px-3 mb-2'>
+                                    <div className='col-12 col-lg-6'>
+                                        <div className='d-flex justify-content-between '>
+                                            <p className={style.normal}>24h chg%</p>
+                                            {detail.market_data? 
+                                                <p className='p-1' 
+                                                    style={{
+                                                        borderRadius:'8px', 
+                                                        border:'1px solid #181A20', 
+                                                        backgroundColor: detail.market_data.price_change_percentage_24h > 0 ? 'lightgreen' : 'tomato'
+                                                    }}>
+                                                    {detail.market_data.price_change_percentage_24h}%
+                                                </p> : null
+                                            }
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>7d chg%</p>
+                                            {detail.market_data? 
+                                                <p className='p-1' 
+                                                    style={{
+                                                        borderRadius:'8px', 
+                                                        border:'1px solid #181A20', 
+                                                        backgroundColor: detail.market_data.price_change_percentage_7d > 0 ? 'lightgreen' : 'tomato'
+                                                    }}>
+                                                    {detail.market_data.price_change_percentage_7d}%
+                                                </p> : null
+                                            }
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>30d chg%</p>
+                                            {detail.market_data? 
+                                                <p className='p-1' 
+                                                    style={{
+                                                        borderRadius:'8px', 
+                                                        border:'1px solid #181A20', 
+                                                        backgroundColor: detail.market_data.price_change_percentage_30d > 0 ? 'lightgreen' : 'tomato'
+                                                    }}>
+                                                    {detail.market_data.price_change_percentage_30d}%
+                                                </p> : null
+                                            }
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>1y chg%</p>
+                                            {detail.market_data? 
+                                                <p className='p-1' 
+                                                    style={{
+                                                        borderRadius:'8px', 
+                                                        border:'1px solid #181A20', 
+                                                        backgroundColor: detail.market_data.price_change_percentage_1y > 0 ? 'lightgreen' : 'tomato'
+                                                    }}>
+                                                    {detail.market_data.price_change_percentage_1y}%
+                                                </p> : null
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className='col-12 col-lg-6'>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>Highest 24h</p>
+                                            {detail.market_data && detail.market_data.high_24h? <p className='p-1'>{detail.market_data.high_24h.usd} $</p>: null}
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>Lowest 24h</p>
+                                            {detail.market_data && detail.market_data.low_24h? <p className='p-1'>{detail.market_data.low_24h.usd} $</p>: null}
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>Market Cap</p>
+                                            {detail.market_data && detail.market_data.market_cap? <p className='p-1'>{detail.market_data.market_cap.usd} $</p>: null}
+                                        </div>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>All Time High</p>
+                                            {detail.market_data && detail.market_data.ath? <p className='p-1'>{detail.market_data.ath.usd} $</p>: null}
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div id={style.bottomPart} className='row m-0 pt-3 px-3'>
+                                    <div className='col-12 col-lg-6'>
+                                        <div className='d-flex justify-content-between align-self-center'>
+                                            <p className={style.normal}>Highest 24h</p>
+                                            {detail.market_data ? <p className='p-1'>{detail.market_data.total_supply} of {cryptoId}</p>: null}
+                                        </div>
+                                    </div>
+                                    <div className='col-12 col-lg-6'>
+                                        <div className='d-flex justify-content-between'>
+                                            <p className={style.normal}>Highest 24h</p>
+                                            {detail.market_data ? <p className='p-1'>{detail.market_data.circulating_supply} of {cryptoId}</p>: null}
+                                        </div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -66,8 +152,8 @@ function CryptoDetails() {
             </div>
         </div>
         <br/><br/><br/><br/>
-        <div>CryptoDetails of {cryptoId}</div>
-        <h1>{detail.id}</h1>
+        <div>CryptoDetails of  {cryptoId} (nome pagina cryptoID)</div>
+        <h1>{detail.id} (nome da fetch detail.id)</h1>
     </div>    
   )
 }
