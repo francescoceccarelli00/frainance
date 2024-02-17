@@ -25,14 +25,14 @@ const  CoinsCards = (props) => {
         <p style={{fontWeight:400}}>Price</p> <p>{props.crypto.current_price} $</p>
       </div>
       <div className='d-flex justify-content-between'>
-        <p style={{fontWeight:400}}>24h Chg%</p> <p className='p-1' style={{borderRadius:'8px', border:'1px solid #181A20', backgroundColor: props.crypto.price_change_percentage_24h > 0 ? 'lightgreen' : 'red'}}>{props.crypto.price_change_percentage_24h} %</p>
+        <p style={{fontWeight:400}}>24h Chg%</p> <p className='p-1' style={{borderRadius:'8px', border:'1px solid #181A20', backgroundColor: props.crypto.price_change_percentage_24h > 0 ? 'lightgreen' : 'tomato'}}>{props.crypto.price_change_percentage_24h} %</p>
       </div>
       <div className='d-flex justify-content-between'>
         <p style={{fontWeight:400}}>Mkt Cap</p> <p>{props.crypto.market_cap} $</p>
       </div>
     </div>
 
-    <div className='p-3 w-100 d-flex justify-content-evenly' style={{backgroundColor: '#F3F4F6', borderRadius: '0 0 26px 26px'}}>
+    <div className='p-3 w-100 d-flex justify-content-evenly' style={{backgroundColor: '#D7D8E0', borderRadius: '0 0 26px 26px'}}>
       {/* prima c'era me-4 se metto entrambi i bottoni */}
       <div className=''>
         <a id='marked' className='pb-2' href='/'>

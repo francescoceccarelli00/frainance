@@ -24,11 +24,9 @@
 #topPart{
   background-color: #F3BA2F;
   border-radius: 44px 44px 0 0;
-  height: 50px;
 }
 
 #bottomPart{
-  background-color: #F3F4F6;
+  background-color: #D7D8E0;
   border-radius:0 0 44px 44px;
-  height: 50px;
 }
