@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../assets/images/logo.png'
 import { NavLink } from 'react-router-dom'
+import Buttons from '../Buttons/Buttons'
 
 const CoinsRow =(props) => {
   return (
@@ -31,7 +32,7 @@ const CoinsRow =(props) => {
             {props.crypto.price_change_percentage_24h} %
         </td>
         <td>
-            Add to<img className='mx-1' src={logo} alt='' style={{maxWidth:24}}/>
+            {<Buttons/>}
         </td>
     </tr>
   )

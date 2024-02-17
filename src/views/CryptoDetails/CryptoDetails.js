@@ -8,8 +8,9 @@ function CryptoDetails() {
     
     const {cryptoId} = useParams();
 
-    const [detail, setDetail]= useState({});
+    // prima fetch per le informazioni delle singole crypto
 
+    const [detail, setDetail]= useState({});
     useEffect(() => {
         axios.get(`https://api.coingecko.com/api/v3/coins/${cryptoId}`)
         .then((resp) => resp.data)
@@ -21,7 +22,24 @@ function CryptoDetails() {
             console.log(error) 
         })
         // eslint-disable-next-line
-    }, [])
+    }, []);
+
+    // seconda fetch per la navigazione
+
+    // const [crypto,setCrypto] = useState([]);
+    // const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C%207d&locale=en&precision=2&x_cg_demo_api_key=CG-KAoatvTcTEQBtENPveM3Nhhd';
+
+    // useEffect(() => {
+    //     axios.get(url)
+    //     .then((resp) => resp.data)
+    //     .then(data => {
+    //         setCrypto(data[0]);
+    //         // console.log(data[0])
+    //     })
+    //     .catch((error) => {
+    //         console.log(error) 
+    //     })
+    // }, [])
 
   return (
     <div className='container'>
@@ -32,8 +50,8 @@ function CryptoDetails() {
             </div>
             <div className='col-10 col-sm-3 d-flex justify-content-center'> Navigation?
                 {/* <div className={style.navigation}>
-                    <NavLink to={detail.id-1}>Prev</NavLink>
-                    <NavLink to={detail.id+1}>Next</NavLink>
+                    <NavLink to={crypto.name}>{crypto.name}</NavLink>
+                    <NavLink to={detail.id}>Next</NavLink>
                 </div> */}
             </div>
         </div>
@@ -49,7 +67,7 @@ function CryptoDetails() {
                                 <div id={style.centralPart} className='row px-3 mb-2'>
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between '>
-                                            <p className={style.normal}>24h chg%</p>
+                                            <p className='p-1' id={style.normal}>24h chg%</p>
                                             {detail.market_data? 
                                                 <p className='p-1' 
                                                     style={{
@@ -62,7 +80,7 @@ function CryptoDetails() {
                                             }
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>7d chg%</p>
+                                            <p className='p-1' id={style.normal}>7d chg%</p>
                                             {detail.market_data? 
                                                 <p className='p-1' 
                                                     style={{
@@ -75,7 +93,7 @@ function CryptoDetails() {
                                             }
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>30d chg%</p>
+                                            <p className='p-1' id={style.normal}>30d chg%</p>
                                             {detail.market_data? 
                                                 <p className='p-1' 
                                                     style={{
@@ -88,7 +106,7 @@ function CryptoDetails() {
                                             }
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>1y chg%</p>
+                                            <p className='p-1' id={style.normal}>1y chg%</p>
                                             {detail.market_data? 
                                                 <p className='p-1' 
                                                     style={{
@@ -103,19 +121,19 @@ function CryptoDetails() {
                                     </div>
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>Highest 24h</p>
+                                            <p className='p-1' id={style.normal}>Highest 24h</p>
                                             {detail.market_data && detail.market_data.high_24h? <p className='p-1'>{detail.market_data.high_24h.usd} $</p>: null}
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>Lowest 24h</p>
+                                            <p className='p-1' id={style.normal}>Lowest 24h</p>
                                             {detail.market_data && detail.market_data.low_24h? <p className='p-1'>{detail.market_data.low_24h.usd} $</p>: null}
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>Market Cap</p>
+                                            <p className='p-1' id={style.normal}>Market Cap</p>
                                             {detail.market_data && detail.market_data.market_cap? <p className='p-1'>{detail.market_data.market_cap.usd} $</p>: null}
                                         </div>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>All Time High</p>
+                                            <p className='p-1' id={style.normal}>All Time High</p>
                                             {detail.market_data && detail.market_data.ath? <p className='p-1'>{detail.market_data.ath.usd} $</p>: null}
                                         </div>
                                         
@@ -124,13 +142,13 @@ function CryptoDetails() {
                                 <div id={style.bottomPart} className='row m-0 pt-3 px-3'>
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between align-self-center'>
-                                            <p className={style.normal}>Highest 24h</p>
+                                            <p className='p-1' id={style.normal}>Total supply</p>
                                             {detail.market_data ? <p className='p-1'>{detail.market_data.total_supply} of {cryptoId}</p>: null}
                                         </div>
                                     </div>
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between'>
-                                            <p className={style.normal}>Highest 24h</p>
+                                            <p className='p-1' id={style.normal}>Circulating supply</p>
                                             {detail.market_data ? <p className='p-1'>{detail.market_data.circulating_supply} of {cryptoId}</p>: null}
                                         </div>
                                     </div>                                    

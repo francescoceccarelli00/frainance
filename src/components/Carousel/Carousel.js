@@ -30,7 +30,7 @@ const Carousel = () => {
             items:4,
         },
         1024: {
-          items:6,
+          items:5,
       },
     };
 
@@ -44,7 +44,8 @@ const Carousel = () => {
                       height={60}
                   />
                   <p id='blackcolor' className='mt-2'>{coin.symbol.toUpperCase()}</p>
-                  <p id='blackcolor' className=''>{coin.current_price}</p>
+                  <p id='blackcolor' className=''>Current price</p>
+                  <p id='blackcolor' className=''>{coin.current_price}$</p>
                 </div>
             </Link>
         );
@@ -55,8 +56,8 @@ const Carousel = () => {
         <AliceCarousel
             mouseTracking
             infinite
-            autoPlayInterval={2000}
-            animationDuration={750}
+            autoPlayInterval={1000}
+            animationDuration={2500}
             disableDotsControls
             disableButtonsControls
             responsive={responsive}

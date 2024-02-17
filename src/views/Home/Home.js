@@ -22,6 +22,7 @@ function Home() {
                         </span>cryptocurrencies
                     </h4>
                 </div>
+                <br/>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-10 offset-1'>
@@ -29,7 +30,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-   
+                <br/>
                 <br/>
                 <p style={{fontWeight:'400', textAlign:'center'}}>This web application was created in React for the <a href='https://elearning.unimib.it/course/info.php?id=51512' id='marked'>Web Applications</a> course project.</p>
                 <p style={{fontWeight:'400', textAlign:'center'}}>The design, name, and logo are intentionally inspired by <a href='https://www.binance.com/it' id='marked'>Binance</a>, while the data used has been sourced from <a href='https://www.coingecko.com/' id='marked'>CoinGecko.</a></p>
