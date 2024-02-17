@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Input } from 'reactstrap';
+import style from './Research.module.css'
 
 export default function Research() {
     
@@ -36,7 +37,7 @@ export default function Research() {
         );
 
   return (
-    <div>
+    <div className={style.search}>
         <Input
             type='text'
             placeholder='Search a crypto'
@@ -44,21 +45,22 @@ export default function Research() {
             onChange={(e)=>handleSearch(e.target.value)}
             className='m-1'
         />
-        <div>
+        <div className={style.filter}>
             {filteredCrypto.length > 0 ?(
                 filteredCrypto.map((crypto)=>(
                     <Link key={crypto.id} to={`/top100/${crypto.id}`} onClick={handleLinkClick}>
-                        <div key={crypto.id}>
+                        <div key={crypto.id} className={style.rowElement}>
                             <img
                                 src={crypto.image}
                                 alt={crypto.id}
+                                className={style.image}
                             />
-                            {crypto.id}
+                            <span className={style.text}>{crypto.id}</span>
                         </div>
                     </Link>
                 ))
             ): searchTerm ?(
-                <div>There is no crypto with this name in top 100</div>
+                <div className={style.texterror}>There is no crypto with this name in the top 100</div>
             ): null}
         </div>
     </div>

@@ -143,13 +143,13 @@ function CryptoDetails() {
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between align-self-center'>
                                             <p className='p-1' id={style.normal}>Total supply</p>
-                                            {detail.market_data ? <p className='p-1'>{detail.market_data.total_supply} of {cryptoId}</p>: null}
+                                            {detail.market_data ? <p className='p-1'>{detail.market_data.total_supply} of {detail.symbol.toUpperCase()}</p>: null}
                                         </div>
                                     </div>
                                     <div className='col-12 col-lg-6'>
                                         <div className='d-flex justify-content-between'>
                                             <p className='p-1' id={style.normal}>Circulating supply</p>
-                                            {detail.market_data ? <p className='p-1'>{detail.market_data.circulating_supply} of {cryptoId}</p>: null}
+                                            {detail.market_data ? <p className='p-1'>{detail.market_data.circulating_supply} of {detail.symbol.toUpperCase()}</p>: null}
                                         </div>
                                     </div>                                    
                                 </div>

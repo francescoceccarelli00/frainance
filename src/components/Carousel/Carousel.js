@@ -36,7 +36,7 @@ const Carousel = () => {
 
     const items = carouselData.map((coin, index) => {
         return(
-            <Link to={`/top100/${coin.id}`} key={index} style={{textDecoration: 'none'}} className=''>
+            <Link to={`/top100/${coin.id}`} key={index} style={{textDecoration: 'none'}} className='backbackcard'>
                 <div className='backcard d-flex flex-column align-items-center p-2 mx-3'>
                   <img
                       src={coin?.image}

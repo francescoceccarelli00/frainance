@@ -26,7 +26,7 @@ function Home() {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-10 offset-1'>
-                            {<Carousel/>} 
+                            {<Carousel />} 
                         </div>
                     </div>
                 </div>
