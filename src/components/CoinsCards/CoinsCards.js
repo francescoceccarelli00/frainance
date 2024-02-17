@@ -1,6 +1,7 @@
 import React from 'react'
 import icon from '../../assets/images/logo.png'
 import { NavLink } from 'react-router-dom'
+import Buttons from '../Buttons/Buttons'
 
 const  CoinsCards = (props) => {
 
@@ -34,14 +35,15 @@ const  CoinsCards = (props) => {
 
     <div className='p-3 w-100 d-flex justify-content-evenly' style={{backgroundColor: '#D7D8E0', borderRadius: '0 0 26px 26px'}}>
       {/* prima c'era me-4 se metto entrambi i bottoni */}
-      <div className=''>
+      {<Buttons/>}
+      {/* <div className=''>
         <a id='marked' className='pb-2' href='/'>
           <span className='me-2' style={{color:'#181A20'}}>Add to Favourite</span>
           <span>
             <img src={icon} alt='' style={{maxWidth:24}}/>
           </span>
         </a>
-      </div>
+      </div> */}
       {/* <div>
         <span className='me-2' style={{color:'#181A20'}}>Add to</span>
         <span>
