@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1>Oops! You seem to be lost.</h1>
         <img className='my-3' width={600} src={Gif} alt='funny error gif'/>
         <h2>Here are some helpful links:</h2>
-        <Link style={{textDecoration:'none'}} className='my-1' to='/'><h2 id='marked'>Home</h2></Link>
+        <Link style={{textDecoration:'none'}} className='my-1' to='/frainance'><h2 id='marked'>Home</h2></Link>
         <Link style={{textDecoration:'none'}} className='my-1' to='/top100'><h2 id='marked'>Top 100</h2></Link>
         <Link style={{textDecoration:'none'}} className='my-1' to='/history'><h2 id='marked'>History</h2></Link>
     </div>
