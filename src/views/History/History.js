@@ -43,7 +43,6 @@ function History() {
                 <p id='blackcolor' dangerouslySetInnerHTML={{
                     __html:DOMPurify.sanitize(item.text)
                 }}></p>
-                {/* <p id='blackcolor' >{item.text}</p> */}
             </div>
             <div className='col-10 offset-1 d-flex justify-content-center py-2'>
                 <img width={item.width} id={style.image}  src={item.image} alt={item.title}/>

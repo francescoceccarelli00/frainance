@@ -70,7 +70,7 @@ const Navbarre = (props) => {
         //     </div>
         // </nav>
 
-        <nav className="navbar navbar-expand-md" style={{backgroundColor: '#F3BA2F'}} >
+        <nav className="navbar navbar-expand-lg" style={{backgroundColor: '#F3BA2F'}} >
             <div className="container">
                 <a className="navbar-brand" href="/"><img className='me-3' src={logo} style={{maxWidth:60}} alt='logo frainance copiato da binance' /></a>
                 <NavbarToggler onClick={toggle}/>

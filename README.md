@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# F(ra)inance
+È una Web Application sviluppata in React come progetto personale, in quanto sono diversi anni che seguo il mondo delle cryptovalute, e come progetto facoltativo universitario per il corso di 'Applicazioni Web' dell'Universitaà degli studi di Milano-Bicocca 2023/2024.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Per trovare tutto ciò che ti serve usa pure questo:
+- [**Tecnologie usate**](#tecnologie)
+- [**Struttura del progetto**](#struttura-del-progetto)
+- [**Visualizzare il progetto o installarlo in locale**](#visita-la-web-app)
+- [**Spiegazione del codice**](#spiegazione-del-codice)
 
-## Available Scripts
+## Tecnologie
 
-In the project directory, you can run:
+Questo progetto è interamente sviluppato in **React** con create-react-app.  
+Per velocità è stato utilizzato **Netifly** come piattaforma di hosting.
+Ovviamente sono stati implementati differenti moduli NPM in modo da ottenere il massimo vantaggio dalla grande comunity di React.  
 
-### `npm start`
+### Moduli NPM
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-**react-router-dom**: Ovviamente necessario per la navigazione tra le pagine della Web App.  
+-**Reactstrap** e **Bootstrap**: Perlopiù ho sfruttato Bootstrap per la creazione di un'interfaccia veloce da costruire e responsive.  
+Reactstrap è stato utilizzato solamente per la costruzione dell'header, sia per la barra di ricerca che per il toggle responsive.  
+-**Axios**: Per la fetch ho utilizzato Axios, una libreria JavaScript che consente di effettuare richieste HTTP.  
+-**clsx**: Utilizzato per gestire dinamicamente il CSS in alcune porzioni di codice.  
+-**react-alice-carousel**: Ha velocizzato e semplificato la costruzione del carosello nella Homepage.  
+-**DOMpurify**: Utilizzata per "ripulire" i file json, in particolare era necessaria nelle pagine al dettaglio in quanto alcune descrizione avevano del codice html, questa libreria mi ha permesso di utilizzare quel codice e personalizzarlo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### API utilizzate
 
-### `npm test`
+Nonostante il design, il nome e il logo siano volutamente ispirati a ([Binance](https://www.binance.com/it)) le API utilizzate provengono tutte da ([CoinGecko](https://www.coingecko.com/)) che mi ha permesso di ottenere tutti i dati necessari alla costruzione della Web App previo accesso e ottenimento di una chiave, tramite queste API, infatti, sono disponibili 10000 chiamate mensili gratuite.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Struttura del progetto
 
-### `npm run build`
+All'interno del progetto ci sono due cartelle principali:
+-**public**: Che contiene tutti i file statici e accessibili
+    -**index.html**: Pagina principale dove ho prestato particolarmente attenzione nell'utilizzo di meta-tag per una buona visualizzazione nella condivisione online
+-**src**: È la cartella che contiene il codice sorgente dell'applicazione.
+    -**assets**: Contiene solamente le immagini, poiché non ho utilizzato altri asset.
+    -**components**: Tutti i componenti utilizzati e riutilizzabili.
+    -**views**: Le pagine costruite che vengono poi visualizzate, le pagine sono:
+        -*Home*
+        -*Top 100*
+            -*CryptoDetails*
+        -*History*
+        -*NotFound*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Visita la Web App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Segui questo link per visualizzare la web app completa: ([F(ra)inance](https://frainance.netlify.app/)).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Visualizzare il progetto in locale
 
-### `npm run eject`
+Per montare il progetto in locale, è necessario seguire i seguenti passaggi:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clonare il Repository da GitHub**: Utilizzando Git, eseguire il comando `git clone` seguito dall'URL del repository GitHub di F(ra)inance:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/francescoceccarelli00/frainance.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Installare le Dipendenze**: Una volta clonato il repository, spostarsi nella directory del progetto e eseguire il comando per installare le dipendenze del progetto utilizzando npm o yarn:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   cd frainance
+   npm install
+   # oppure
+   yarn install
+   ```
 
-## Learn More
+3. **Visualizzare l'Applicazione nel Browser**: Una volta installata, è possibile visualizzare l'applicazione nel browser aprendo l' URL che apparirà nel terminale. Esempio:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   http://localhost:3000
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   L'applicazione sarà quindi accessibile e interattiva sulla propria macchina locale.
 
-### Code Splitting
+## Spiegazione del codice
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Il progetto creato segue perlopiù le cose viste a lezione, le cose in più o diverse sono:
 
-### Analyzing the Bundle Size
+- In *Navbar* ho aggiungto il componente *Research* per inserire il filtro della barra di ricerca.
+- All'interno della *Homepage* è presente il componente *Carousel* nel quale ho creato un carosello animato per la visualizzazione delle crypto in top 10 con l'aiuto di *react-alice-carousel*.
+- In *CoinGrid* e *CoinTable* è presente la fetch con *Axios* che passa i dati rispettivamente in *CoinCards* e *CoinRow*, questi due componenti permettono la visualizzazione delle stesse informazioni in due modi differenti, entrambe rimandano a *CryptoDetails* la pagina al dettaglio delle singole crypto.
+- *CryptoDetails* riporta più informazioni e una breve storia della cryptovaluta selezionata, qui, dato che alcuni dati erano riportati in codice ho utilizzato *DOMpurify* per "ripulire" i file json.
+- L'ultima pagina è HIstory nella quale ho creato due costanti 
+    - La prima è un array di oggetti con coppie chiave valore nelle quali ho riportato tutte le informazioni che volevo riportare, non ho trovato dei file che le avessero già,
+    - La seconda esegue il mapping degll'array in modo tale da renderizzare i dati necessari
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Scelte UI/UX
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Durante lo sviluppo ho chiesto dei feedback ad amici e colleghi in modo da rendere l'applicazione più accessibile e facile da utilizzare.
+L'estetica prova a rimanere coerente con elementi come le card, riprese all'interno delle pagine al dettaglio, con colori e smussamenti degli angoli sempre costanti e con una gerarchia dei testi ben definita
