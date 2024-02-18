@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.bbe69fc8.css",
-    "main.js": "/static/js/main.ff617cb6.js",
-    "static/js/592.24e27fba.chunk.js": "/static/js/592.24e27fba.chunk.js",
-    "static/media/Not_found.gif": "/static/media/Not_found.bbf10ba691e0bb30e218.gif",
-    "static/media/disco.png": "/static/media/disco.0c3669cd6d78aff0cdc4.png",
-    "index.html": "/index.html",
-    "main.bbe69fc8.css.map": "/static/css/main.bbe69fc8.css.map",
-    "main.ff617cb6.js.map": "/static/js/main.ff617cb6.js.map",
-    "592.24e27fba.chunk.js.map": "/static/js/592.24e27fba.chunk.js.map"
+    "main.css": "/frainance/static/css/main.bbe69fc8.css",
+    "main.js": "/frainance/static/js/main.b91f9e91.js",
+    "static/js/592.24e27fba.chunk.js": "/frainance/static/js/592.24e27fba.chunk.js",
+    "static/media/Not_found.gif": "/frainance/static/media/Not_found.bbf10ba691e0bb30e218.gif",
+    "static/media/disco.png": "/frainance/static/media/disco.0c3669cd6d78aff0cdc4.png",
+    "index.html": "/frainance/index.html",
+    "main.bbe69fc8.css.map": "/frainance/static/css/main.bbe69fc8.css.map",
+    "main.b91f9e91.js.map": "/frainance/static/js/main.b91f9e91.js.map",
+    "592.24e27fba.chunk.js.map": "/frainance/static/js/592.24e27fba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bbe69fc8.css",
-    "static/js/main.ff617cb6.js"
+    "static/js/main.b91f9e91.js"
   ]
 }
