@@ -57,7 +57,7 @@ function History() {
     <div className='container my-5'>
         <h1 style={{textAlign:'center'}}>History of Bitcoin<br/>The father of cryptocurrency</h1>
         {render}
-        <NavLink id='marked' to={<NotFound/>}>
+        <NavLink id='marked' to={'/error'}>
             <p style={{fontSize: '5px', textAlign:'center', fontWeight:'400'}} >For error page click here</p>
         </NavLink>
     </div>
