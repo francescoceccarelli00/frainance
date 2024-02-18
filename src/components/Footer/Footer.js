@@ -14,7 +14,7 @@ function Footer(props1) {
                 <div className='col my-3 d-flex align-items-center justify-content-center'>
                     <div className={'d-flex align-items-center {style.copyright}'}>
                         <div className={style.logos} id={style.logo}>
-                            <a href='/'>
+                            <a href='/frainance'>
                                 <img src={logo} alt='logo di frainance copiato da binance'/>
                             </a>
                         </div>

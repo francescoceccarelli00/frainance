@@ -72,7 +72,7 @@ const Navbarre = (props) => {
 
         <nav className="navbar navbar-expand-lg" style={{backgroundColor: '#F3BA2F'}} >
             <div className="container">
-                <a className="navbar-brand" href="/"><img className='me-3' src={logo} style={{maxWidth:60}} alt='logo frainance copiato da binance' /></a>
+                <a className="navbar-brand" href="/frainance"><img className='me-3' src={logo} style={{maxWidth:60}} alt='logo frainance copiato da binance' /></a>
                 <NavbarToggler onClick={toggle}/>
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className='navbar-nav ms-auto gap-5' navbar>
