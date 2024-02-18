@@ -27,7 +27,7 @@ const Carousel = () => {
             items:2,
         },
         512: {
-            items:4,
+            items:3,
         },
         1024: {
           items:5,
@@ -42,10 +42,12 @@ const Carousel = () => {
                       src={coin?.image}
                       alt={coin.name}
                       height={100}
+                      className='mb-3'
+                      id='phone-logo'
                   />
-                  <p id='blackcolor' className='mt-2'>{coin.symbol.toUpperCase()}</p>
-                  <p id='blackcolor' className=''>Current price</p>
-                  <p id='blackcolor' className=''>{coin.current_price}$</p>
+                  <p id='blackcolor' className='phone-text'>{coin.symbol.toUpperCase()}</p>
+                  <p id='blackcolor' className='phone-text'>Current price</p>
+                  <p id='blackcolor' className='phone-text'>{coin.current_price}$</p>
                 </div>
             </Link>
         );

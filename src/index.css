@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
+
 h1{
   font-family: 'Inter', sans-serif;
   font-size: 36px;
@@ -41,7 +42,7 @@ p{
   text-decoration: 2px solid underline #F3BA2F;
   text-underline-offset: 4px;
   padding: 6px;
-  color: black;
+  color: #181A20;
   transition: .5s;
 }
 
@@ -58,5 +59,33 @@ p{
 
 #blackcolor{
   font-weight: 400;
-  color: black;
+  color: #181A20;
+}
+
+@media screen and (max-width:425px){
+  .phone-text{
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  #phone-icon{
+    max-width: 20px;
+    height: auto;
+  }
+  #phone-td{
+    font-size: 0.75rem;
+  }
+  #phone-td2{
+    font-size: 0.85rem;
+  }
+  td{
+    font-size: 0.81rem;
+  }
+  #phone-logo{
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+*{
+  color: #181A20;
 }

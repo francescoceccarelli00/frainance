@@ -45,7 +45,7 @@ function CryptoDetails() {
     <div className='container'>
         <div className='row justify-content-center align-items-center my-5'>
             <div className='col-10 col-sm-9'>
-                <p className={style.normal}>Questa è la crypto numero #{detail.market_cap_rank} per capitale</p>
+                <p className={style.normal}>This is crypto number #{detail.market_cap_rank} for capital</p>
                 <h1><span>{detail.image ? <img className='mx-2' src={detail.image.small} alt=''/>: null}</span>{detail.name}</h1>
             </div>
             {/* <div className='col-10 col-sm-3 d-flex justify-content-center'> Navigation?
