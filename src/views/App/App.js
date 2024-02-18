@@ -10,7 +10,7 @@ import History from '../History/History'
 function App() {
 
   const nav =[
-    {url:"/", text:"Home"},
+    {url:"/frainance", text:"Home"},
     {url:"/top100", text:"Top 100", exact: false},
     {url:"/history", text:"History"}
   ];
@@ -24,7 +24,7 @@ function App() {
         navItems={nav}
       >
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/frainance' element={<Home/>}/>
           <Route path='/top100' element={<Top100/>}/>
           <Route path='/history' element={<History/>}/>
           <Route path='/top100/:cryptoId' element={<CryptoDetails/>}/>
