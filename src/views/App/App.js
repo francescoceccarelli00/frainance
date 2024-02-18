@@ -1,7 +1,7 @@
 import React from 'react'
 import MainTemplate from '../../components/MainTemplate/MainTemplate'
 import Home from '../Home/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import CryptoDetails from '../CryptoDetails/CryptoDetails'
 import Top100 from '../Top100/Top100'
 import NotFound from '../NotFound/NotFound'
@@ -28,7 +28,7 @@ function App() {
           <Route path='/top100' element={<Top100/>}/>
           <Route path='/history' element={<History/>}/>
           <Route path='/top100/:cryptoId' element={<CryptoDetails/>}/>
-          <Route path='*' element={<NotFound />}/>
+          <Route path='*' element={<Navigate to={<NotFound />}/>}/>
         </Routes>
       </MainTemplate>
     </BrowserRouter>
