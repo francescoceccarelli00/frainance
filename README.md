@@ -44,7 +44,7 @@ All'interno del progetto ci sono due cartelle principali:
 
 ## Visita la Web App
 
-Segui questo link per visualizzare la web app completa: ([F(ra)inance](https://frainance.netlify.app/)).
+Segui questo link per visualizzare la web app completa: ([F(ra)inance](https://francescoceccarelli00.github.io/frainance/)).
 
 ## Visualizzare il progetto in locale
 
