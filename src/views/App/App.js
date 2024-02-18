@@ -28,7 +28,8 @@ function App() {
           <Route path='/top100' element={<Top100/>}/>
           <Route path='/history' element={<History/>}/>
           <Route path='/top100/:cryptoId' element={<CryptoDetails/>}/>
-          <Route path='*' element={<Navigate to={<NotFound />}/>}/>
+          <Route path='/error' element={<NotFound/>} />
+          <Route path='*' element={<Navigate to='/error'/>}/>
         </Routes>
       </MainTemplate>
     </BrowserRouter>
