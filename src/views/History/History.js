@@ -55,7 +55,7 @@ function History() {
     <div className='container my-5'>
         <h1 style={{textAlign:'center'}}>History of Bitcoin<br/>The father of cryptocurrency</h1>
         {render}
-        <p style={{fontSize: '6px', textAlign:'center'}} ><a id='marked' href='/'>for error page click here</a></p>
+        <p style={{fontSize: '5px', textAlign:'center', fontWeight:'400'}} ><a id='marked' href='/error'>For error page click here</a></p>
     </div>
   )
 }
